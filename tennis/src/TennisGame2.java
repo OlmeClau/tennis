@@ -31,7 +31,8 @@ public class TennisGame2 implements TennisGame
         
        
     }
-    public void setScorePlayer2WinningPlayer1Zero ()
+
+    public void setScorePlayer1WinningPlayer2Zero ()
     {
         
             if (player1Points==1)
@@ -42,6 +43,22 @@ public class TennisGame2 implements TennisGame
                 player1Result = "Forty";
             
             player2Result = "Love";
+            score = player1Result + "-" + player2Result;
+
+    }
+
+
+    public void setScorePlayer2WinningPlayer1Zero ()
+    {
+        
+            if (player2Points==1)
+                player2Result = "Fifteen";
+            if (player2Points==2)
+                player2Result = "Thirty";
+            if (player2Points==3)
+                player2Result = "Forty";
+            
+            player1Result = "Love";
             score = player1Result + "-" + player2Result;
         
 
@@ -85,7 +102,11 @@ public class TennisGame2 implements TennisGame
         }
          if (player1Points > 0 && player2Points==0)
          {
-          setScorePlayer2WinningPlayer1Zero();
+          setScorePlayer1WinningPlayer2Zero();
+         }
+         if (player2Points > 0 && player1Points==0)
+         {
+          setScorePlayer2WinningPlayer1Zero();  
          }
         if (player1Points>player2Points && player1Points < 4)
         {
