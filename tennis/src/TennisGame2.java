@@ -1,17 +1,14 @@
 import main.java.TennisGame;
-
-
-
+//las reglas de este juego se apegan a las ITF reglas del tenis de 2015
 public class TennisGame2 implements TennisGame
 {
     public int player1Points = 0;
-    public int player2Points = 0;
-    
-    public String player1Result = "";
-    public String player2Result = "";
+    public int player2Points = 0;    
+    public String player1Result = ""; //resultado literal del puntaje individual jugador1
+    public String player2Result = "";//resultado literal del puntaje individual jugador2
     private String player1Name;
     private String player2Name;
-    private String score = "";
+    private String score = "";//resultado del puntaje en conjunto 
 
     public TennisGame2(String player1Name, String player2Name) {
         this.player1Name = player1Name;
@@ -96,6 +93,7 @@ public class TennisGame2 implements TennisGame
     }
 
     public String getScore(){
+
         if (player1Points == player2Points && player1Points < 4)
         {
           setScorePlayersEven();
@@ -117,8 +115,6 @@ public class TennisGame2 implements TennisGame
           setScorePlayer2WinningUnder4();
 
         }
-
-
         if (player1Points==player2Points && player1Points>=3)
         {
             score = "Deuce";
